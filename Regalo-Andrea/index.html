@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Un mundito para Andrea 💙</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <div class="sky" aria-hidden="true"><span>✦</span><span>✧</span><span>✦</span><span>✧</span></div>
+    <main class="app">
+        <header><span class="brand">un mundito para Andrea</span></header>
+        <section id="welcome" class="screen active">
+            <h1>💙 Holiwiiis dormiloncita 💙</h1>
+            <p>Alguien pequeñito lleva rato esperándote...</p>
+            <div class="cloud">☁️</div>
+            <div id="wakeCat" class="cat-wrap" role="button" tabindex="0" aria-label="Despertar al gatito"></div>
+            <div class="bubble" id="welcomeTalk">Shhhh... está dormidito </div><button id="start" class="primary"
+                hidden>¡Vamoooos! 🐾</button>
+        </section>
+        <section id="garden" class="screen">
+            <h1>Un jardincito para ti 🌷</h1>
+            <p>El gatito encontró unas flores. Tócalas para descubrir lo que guardan.</p>
+            <div id="flowers" class="flowers"></div>
+            <div id="flowerMessage" class="bubble">Cada florecita tiene algo bonito 💙</div><button id="toLetter"
+                class="primary" hidden>Hay algo más para ti 💌</button>
+        </section>
+        <section id="letter" class="screen">
+            <h1>Una cartita especial 💌</h1>
+            <p>El gatito dice que no la leyó porque... bueno, es un gato JAJJAJA </p><button id="envelope" class="envelope"
+                aria-label="Abrir la carta">💌<small>Tócame</small></button>
+            <article id="letterText" class="paper" hidden>
+                <h2>Para ti</h2>
+                <p>Holiiiiiis pecas 🥺</p>
+                <p>Quería hacerte algo bonito, y pensé en tu color favorito y en lo mucho que te gustan los gatitos.</p>
+                <p>Me gusta muchísimo hablar contigo, reírnos de nuestras bromas y conocer un poquito más de ti cada
+                    día. Eso siempre me encanta</p>
+                <p>No sé en qué momento pasó, pero te volviste alguien muy especial para mí. Espero que este pequeño
+                    mundito te saque una sonrisa, porque tú me has sacado muchas y las seguiras sacando</p>
+                <p><strong>Te quiero muchoooo, Andreaaa. 💙🐱</strong></p><button id="toAdopt" class="primary">Una
+                    última sorpresita 🐾</button>
+            </article>
+        </section>
+        <section id="adopt" class="screen">
+            <h1>¿Quieres adoptarme, Andrea? 🥺</h1>
+            <div id="adoptCat" class="cat-wrap"></div>
+            <div class="bubble" id="adoptTalk">Ya hasta hice mi maletita... 🧳</div>
+            <div class="actions"><button id="yesAdopt" class="primary">¡SÍIIII! 💙</button><button id="maybe"
+                    class="secondary">Mmm, déjame pensarlo</button></div>
+            <div id="nameBox" hidden><label for="catName">¿Cómo quieres llamarme?</label><input id="catName"
+                    maxlength="18" placeholder="Ej. Nubecito"><button id="saveName" class="primary">¡Listooo!
+                    🐱</button></div>
+        </section>
+        <section id="room" class="screen">
+            <h1 id="roomTitle">La casita de tu gatito 🏡</h1>
+            <p>Arrastra tu dedo por la habitación o toca un lugar para que camine.</p>
+            <div id="roomScene" class="room" aria-label="Habitación interactiva">
+                <div class="window">☁️<br>☀️</div>
+                <div class="shelf">🪴　⭐</div>
+                <div class="bed">🛏️</div>
+                <div class="bowl">🥣</div>
+                <div id="roomCat" class="cat-wrap walking-cat"></div>
+                <div id="roomBubble" class="room-bubble">¡Andreaaa, volviste! 💙</div>
+            </div>
+            <div class="actions controls"><button data-action="feed">🐟 Alimentar</button><button data-action="pet">💗
+                    Acariciar</button><button data-action="play">🧶 Jugar</button><button data-action="sleep">💤
+                    Dormir</button></div>
+            <p class="hint">💙 Este pequeño mundito siempre te estará esperando.</p><button id="replay"
+                class="tiny">Volver a ver la sorpresa ✨</button>
+        </section>
+        <footer>Hecho con muchísimo cariño para Andrea 💙</footer>
+    </main>
+    <script src="js/mascota.js"></script>
+    <script src="js/historia.js"></script>
+</body>
+
+</html>

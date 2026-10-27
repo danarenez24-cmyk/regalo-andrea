@@ -1,0 +1,570 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root {
+    --blue: #669bd8;
+    --dark: #3b608e;
+    --pale: #eaf5ff;
+    --pink: #ffd8ec
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: Nunito, system-ui, sans-serif;
+    color: var(--dark);
+    background: linear-gradient(160deg, #c9e6ff, #f5edff 65%, #e3f4ff);
+    min-height: 100vh;
+    overflow-x: hidden
+}
+
+.sky {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden
+}
+
+.sky span {
+    position: absolute;
+    color: white;
+    font-size: 35px;
+    animation: twinkle 3s infinite alternate
+}
+
+.sky span:nth-child(1) {
+    top: 12%;
+    left: 12%
+}
+
+.sky span:nth-child(2) {
+    top: 27%;
+    right: 13%;
+    animation-delay: .6s
+}
+
+.sky span:nth-child(3) {
+    bottom: 22%;
+    left: 8%;
+    animation-delay: 1.4s
+}
+
+.sky span:nth-child(4) {
+    bottom: 15%;
+    right: 9%;
+    animation-delay: 2s
+}
+
+.app {
+    position: relative;
+    max-width: 850px;
+    margin: 20px auto;
+    padding: 18px 24px 30px;
+    background: #ffffffad;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    box-shadow: 0 20px 65px #6b94b42b;
+    min-height: 90vh
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.brand {
+    font-weight: 900;
+    color: #6c96cb
+}
+
+.screen {
+    display: none;
+    min-height: 570px;
+    text-align: center;
+    padding: 24px 5px;
+    animation: appear .6s ease
+}
+
+.screen.active {
+    display: block
+}
+
+h1 {
+    font-size: clamp(27px, 5vw, 42px);
+    margin: 10px 0;
+    color: #527fb8
+}
+
+h2 {
+    color: #527fb8
+}
+
+p {
+    line-height: 1.65
+}
+
+button {
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    border: 0;
+    transition: transform .2s, filter .2s
+}
+
+button:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.04)
+}
+
+button:focus-visible,
+.cat-wrap:focus-visible {
+    outline: 3px solid #3e85d6;
+    outline-offset: 4px
+}
+
+.primary,
+.secondary,
+.controls button {
+    padding: 13px 20px;
+    border-radius: 22px;
+    margin: 8px
+}
+
+.primary {
+    background: #79a9e6;
+    color: white;
+    box-shadow: 0 6px 0 #5588ca
+}
+
+.secondary {
+    background: #fff;
+    color: #6c93c6;
+    border: 2px solid #a5c7ed
+}
+
+.tiny {
+    background: #eaf4ff;
+    color: #6d95c7;
+    border-radius: 20px;
+    padding: 8px 13px
+}
+
+.bubble {
+    max-width: 410px;
+    background: white;
+    border: 2px solid #d6e8ff;
+    border-radius: 23px;
+    padding: 15px;
+    margin: 22px auto;
+    box-shadow: 0 6px 16px #7fa8d31c;
+    font-weight: 800
+}
+
+.cloud {
+    font-size: 75px;
+    margin-bottom: -55px;
+    opacity: .7;
+    pointer-events: none
+}
+
+.cat-wrap {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 24px auto;
+    cursor: pointer;
+    animation: bob 2.5s ease-in-out infinite;
+    user-select: none;
+    touch-action: manipulation
+}
+
+.cat {
+    position: relative;
+    width: 150px;
+    height: 155px;
+    margin: auto
+}
+
+.ear {
+    position: absolute;
+    top: 9px;
+    width: 55px;
+    height: 69px;
+    background: white;
+    border: 4px solid #8eb5e5;
+    border-radius: 9px 85% 8px 8px;
+    transform: rotate(-21deg);
+    left: 11px
+}
+
+.ear.right {
+    left: auto;
+    right: 11px;
+    transform: rotate(21deg) scaleX(-1)
+}
+
+.ear:after {
+    content: '';
+    position: absolute;
+    inset: 12px 9px 9px;
+    background: #ffc6df;
+    border-radius: inherit
+}
+
+.head {
+    position: absolute;
+    top: 32px;
+    left: 7px;
+    width: 136px;
+    height: 113px;
+    background: #fff;
+    border: 4px solid #8eb5e5;
+    border-radius: 47% 47% 44% 44%;
+    z-index: 2;
+    box-shadow: inset 0 -7px #f0f6ff
+}
+
+.eye {
+    position: absolute;
+    top: 43px;
+    width: 13px;
+    height: 20px;
+    border-radius: 50%;
+    background: #426a9c;
+    left: 34px
+}
+
+.eye.right {
+    left: auto;
+    right: 34px
+}
+
+.nose {
+    position: absolute;
+    top: 63px;
+    left: 61px;
+    width: 12px;
+    height: 9px;
+    background: #f5a9c7;
+    border-radius: 50%
+}
+
+.mouth {
+    position: absolute;
+    top: 72px;
+    left: 53px;
+    color: #6c8caf;
+    font-size: 18px
+}
+
+.cheek {
+    position: absolute;
+    top: 67px;
+    left: 13px;
+    width: 20px;
+    height: 10px;
+    background: #ffd9e8;
+    border-radius: 50%
+}
+
+.cheek.right {
+    left: auto;
+    right: 13px
+}
+
+.bow {
+    position: absolute;
+    z-index: 4;
+    top: 127px;
+    left: 57px;
+    color: #70a4e8;
+    font-size: 28px
+}
+
+.tail {
+    position: absolute;
+    z-index: 0;
+    right: -9px;
+    top: 104px;
+    width: 48px;
+    height: 24px;
+    border: 10px solid #8eb5e5;
+    border-left: 0;
+    border-bottom: 0;
+    border-radius: 0 60px 0 0;
+    transform-origin: left;
+    animation: wag 1.5s infinite alternate
+}
+
+.cat-wrap.sleeping .eye {
+    height: 4px;
+    top: 53px;
+    border-radius: 10px
+}
+
+.cat-wrap.happy .eye {
+    height: 9px;
+    top: 49px;
+    border-radius: 100% 100% 0 0;
+    background: transparent;
+    border-top: 4px solid #426a9c
+}
+
+.cat-wrap.surprised .eye {
+    height: 24px;
+    width: 17px
+}
+
+.cat-wrap.walking {
+    animation: step .35s infinite alternate
+}
+
+.flowers {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 55px auto 40px
+}
+
+.flower {
+    font-size: 57px;
+    background: #ffffff9e;
+    border: 2px solid #d7e9ff;
+    border-radius: 24px;
+    padding: 14px;
+    filter: grayscale(1);
+    transition: .5s
+}
+
+.flower.open {
+    filter: none;
+    transform: scale(1.08)
+}
+
+.envelope {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 35px auto;
+    background: #e5f2ff;
+    border: 3px solid #c3ddf9;
+    border-radius: 30px;
+    font-size: 110px;
+    padding: 30px
+}
+
+.envelope small {
+    font-size: 15px;
+    color: #527fb8
+}
+
+.paper {
+    max-width: 530px;
+    text-align: left;
+    background: #fffdfb;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 12px 25px #6c91b329;
+    margin: 20px auto;
+    animation: appear .7s
+}
+
+.paper .primary {
+    display: block;
+    margin: 20px auto 0
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px
+}
+
+input {
+    display: block;
+    margin: 15px auto;
+    padding: 13px;
+    border: 2px solid #a7c8e9;
+    border-radius: 15px;
+    font: inherit;
+    text-align: center;
+    max-width: 90%
+}
+
+#nameBox {
+    margin: 20px
+}
+
+.room {
+    position: relative;
+    height: 370px;
+    border-radius: 28px;
+    overflow: hidden;
+    border: 4px solid #b8d9f6;
+    background: linear-gradient(#d7eafa 0 70%, #c8d9ef 70%);
+    touch-action: pan-y
+}
+
+.room:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 70%;
+    height: 4px;
+    background: #9fbfdf
+}
+
+.window {
+    position: absolute;
+    top: 32px;
+    left: 14%;
+    background: #a7d9ff;
+    border: 9px solid white;
+    border-radius: 18px;
+    width: 95px;
+    height: 105px;
+    font-size: 32px
+}
+
+.shelf {
+    position: absolute;
+    right: 10%;
+    top: 75px;
+    font-size: 38px;
+    border-bottom: 8px solid #a4b6d5
+}
+
+.bed {
+    position: absolute;
+    bottom: 25px;
+    left: 7%;
+    font-size: 70px
+}
+
+.bowl {
+    position: absolute;
+    bottom: 25px;
+    right: 8%;
+    font-size: 46px
+}
+
+.walking-cat {
+    position: absolute;
+    left: calc(50% - 90px);
+    bottom: 18px;
+    margin: 0;
+    z-index: 3;
+    transition: left 1.2s linear, bottom 1.2s linear
+}
+
+.room-bubble {
+    position: absolute;
+    z-index: 5;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    max-width: 85%;
+    font-weight: 800;
+    box-shadow: 0 5px 15px #6281a633
+}
+
+.controls button {
+    background: #e9f3ff;
+    color: #507bb1;
+    border: 2px solid #bcd8f8
+}
+
+.hint,
+footer {
+    font-size: 13px;
+    color: #7896b7
+}
+
+footer {
+    text-align: center;
+    margin-top: 12px
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+@keyframes bob {
+    50% {
+        transform: translateY(-8px)
+    }
+}
+
+@keyframes wag {
+    to {
+        transform: rotate(25deg)
+    }
+}
+
+@keyframes twinkle {
+    to {
+        opacity: .2;
+        transform: scale(.7)
+    }
+}
+
+@keyframes step {
+    to {
+        transform: translateY(-5px) rotate(2deg)
+    }
+}
+
+@media(max-width:600px) {
+    .app {
+        margin: 8px;
+        padding: 12px;
+        min-height: 96vh;
+        border-radius: 22px
+    }
+
+    .screen {
+        min-height: 520px;
+        padding: 18px 2px
+    }
+
+    .room {
+        height: 340px
+    }
+
+    .walking-cat {
+        transform: scale(.8);
+        transform-origin: bottom left
+    }
+
+    .flower {
+        font-size: 42px;
+        padding: 9px
+    }
+
+    .paper {
+        padding: 20px
+    }
+
+    .controls button {
+        padding: 10px 12px;
+        margin: 3px
+    }
+}
